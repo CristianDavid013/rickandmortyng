@@ -1,0 +1,24 @@
+<h2>rick and morty Characters </h2>
+
+<div class="grid">
+  <mat-card *ngFor="let p of personajes" (click)="abrirDetalle(p)" class="card">
+    <mat-card-header>
+      <mat-card-title>{{ p.name }}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image [src]="p.image" [alt]="p.name" />
+    <mat-card-content>
+      <p>{{ p.species }} — {{ p.status }}</p>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<mat-paginator
+  [length]="total"
+  [pageSize]="pageSize"
+  [pageIndex]="pageIndex"
+  [pageSizeOptions]="[20]"
+  (page)="onPage($event)">
+</mat-paginator>
+
+
+

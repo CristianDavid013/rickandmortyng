@@ -1,0 +1,13 @@
+<!-- src/app/components/dialogs/location-dialog/location-dialog.component.html -->
+<mat-card *ngIf="locationDetails">
+  <mat-card-title>Ubicación</mat-card-title>
+  <mat-card-content>
+    <p><strong>Nombre:</strong> {{ locationDetails.name }}</p>
+    <p><strong>Tipo:</strong> {{ locationDetails.type }}</p>
+    <p><strong>Dimensión:</strong> {{ locationDetails.dimension }}</p>
+    <p><strong>Residentes:</strong> {{ locationDetails.residents.length }}</p>
+  </mat-card-content>
+  <mat-card-actions align="end">
+    <button mat-button (click)="onClose()">Cerrar</button>
+  </mat-card-actions>
+</mat-card>

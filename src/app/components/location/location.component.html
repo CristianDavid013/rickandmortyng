@@ -1,0 +1,16 @@
+<!-- src/app/components/location/location.component.html -->
+<
+
+div class="location-container">
+  <mat-grid-list cols="4" gutterSize="16px" rowHeight="1:1">
+    <mat-grid-tile *ngFor="let location of locations">
+      <mat-card class="location-card">
+        <mat-card-title>{{ location.name }}</mat-card-title>
+        <mat-card-content>
+          <p><strong>Tipo:</strong> {{ location.type }}</p>
+          <p><strong>Dimensión:</strong> {{ location.dimension }}</p>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

@@ -1,0 +1,39 @@
+<mat-card *ngIf="showMain">
+  <img mat-card-image [src]="data.image" alt="{{ data.name }}" />
+  <mat-card-header>
+    <mat-card-title>{{ data.name }}</mat-card-title>
+    <mat-card-subtitle>{{ data.species }} — {{ data.status }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p><strong>Género:</strong> {{ data.gender }}</p>
+    <p><strong>Ubicación:</strong> {{ ubicacionNombre }}</p>
+    <p><strong>Primer episodio:</strong> {{ primerEpisodioNombre }}</p>
+  </mat-card-content>
+  <mat-card-actions align="end">
+    <button mat-button (click)="openEpisodeDetail()">Ver episodio</button>
+    <button mat-button (click)="openLocationDetail()">Ver ubicación</button>
+    <button mat-button (click)="onClose()">Cerrar</button>
+  </mat-card-actions>
+</mat-card>
+
+<!-- Detalles del episodio -->
+<mat-card *ngIf="showEpisode">
+  <mat-card-header>
+    <mat-card-title>📺 {{ selectedEpisode.name }}</mat-card-title>
+    <mat-card-subtitle>{{ selectedEpisode.episode }} — Lanzado el {{ selectedEpisode.air_date }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-actions align="end">
+    <button mat-button (click)="backToMain()">Volver</button>
+  </mat-card-actions>
+</mat-card>
+
+<!-- Detalles de ubicación -->
+<mat-card *ngIf="showLocation">
+  <mat-card-header>
+    <mat-card-title>📍 {{ selectedLocation.name }}</mat-card-title>
+    <mat-card-subtitle>{{ selectedLocation.type }} — {{ selectedLocation.dimension }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-actions align="end">
+    <button mat-button (click)="backToMain()">Volver</button>
+  </mat-card-actions>
+</mat-card>

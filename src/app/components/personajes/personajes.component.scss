@@ -1,0 +1,47 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  padding: 16px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+
+  mat-card-header {
+    padding: 8px;
+    text-align: center;
+    background: #212121;
+    color: white;
+  }
+
+  img {
+    /* Eliminar altura fija */
+    width: 100%;
+    height: auto;
+    /* Con object-fit: contain la imagen no se recorta */
+    object-fit: contain;
+    background: #000; /* para cuando la proporción no llene todo el espacio */
+  }
+
+  mat-card-content {
+    padding: 8px;
+    text-align: center;
+
+    p {
+      margin: 4px 0;
+      font-size: 13px;
+    }
+  }
+}
+
+mat-paginator {
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+}

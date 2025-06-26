@@ -1,0 +1,27 @@
+.episodios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  padding: 16px;
+}
+
+.episodio-card {
+  padding: 16px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  mat-card-title {
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  mat-card-subtitle {
+    font-size: 14px;
+    color: #555;
+  }
+}
